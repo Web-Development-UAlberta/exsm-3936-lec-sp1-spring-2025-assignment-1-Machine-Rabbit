@@ -12,6 +12,11 @@ Add your README content here.
 # Shallowly Simulated Car & Engine
 ## Contributions
 Program created by Shylo Edinger, instructed by Bo Cen
+## Project Features
+This program demostrates Classes. It has a Car, Engine, and Transmission Classes.
+The engine and transmission class is instantiated by the car class.
+This program contains methods that Start the car, Stop the car, and Drive the Car.
+The car after Starting, stopping and driving will then output the total distance travelled.
 ## Project Purpose
 This program loosely simulates a car and its engine.
 The car instantiates, and defaults as off. The car is turned on, and drives.
