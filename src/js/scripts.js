@@ -49,25 +49,25 @@ class Car {
   //setters
   set make (value){
     if (!value || typeof value !== "string"){
-      output('test: at make if');
+      //output('test: at make if');
     }
     else{
       this._make = value;
-      output('test: at set make else');
+      //output('test: at set make else');
     }
   }
   set model(value){
     if (!value || typeof value !== "string"){
-      output("test: at set model if");
+      //output("test: at set model if");
     }
     else{
       this._model = value;
-      output("test: at set model else");
+      //output("test: at set model else");
     }
   }
   set year (value){
     this._year = parseInt(value);
-    output("test: at set year");
+    //output("test: at set year");
   }
   set odometer(value){
     this._odometer = value;
@@ -89,8 +89,13 @@ class Car {
       }
     }
     Stop(){
-      this.myEngine.isRunning = false;
-      output("Car turned off.");
+      if(this.myEngine.isRunning){
+        this.myEngine.isRunning = false;
+        output("Car turned off.");
+      } else {
+        output("Your car is already off.")
+      }
+      
     }
     Drive(kilometers){
       if (this.myEngine.isRunning){
@@ -146,22 +151,37 @@ class Transmission {
   }
 }
 //...
-//...
-//...
 let myCar = new Car("Cadillac", "xt5", 2019);
-output(`Car - Make: ${myCar.make}, Model: ${myCar.model}, Year: ${myCar.year} Odometer reads at: ${myCar.odometer}`);
-output(`Engine - Cylinder Count: ${myCar.myEngine.cylCount}, Is it running? ${myCar.myEngine.isRunning}`); //Engine Class properties need to initialize from Car Class
-output(`Transmission - Is it automatic? ${myCar.myTransmission.transTypeAuto}, Gear Count: ${myCar.myTransmission.gearCount}`);
-
+output(`My Car is a ${myCar.make} ${myCar.model}`);
 myCar.Start();
-//myCar.Start();
-myCar.Stop();
 myCar.Drive(100);
 myCar.Stop();
 myCar.Start();
 myCar.Drive(50);
 myCar.Stop();
 output(`Total distance driven: ${myCar.odometer}`);
-
+output("end");
 //...
+output("Catching - starting an already running car: ")
+let myCar1 = new Car ("Ford", "F-150", 2020);
+output(`My Car is a ${myCar1.make} ${myCar1.model}`);
+myCar1.Start();
+myCar1.Start();
+output("end");
+//..
+output("Catching - stopping an already stopped car, and driving a stopped car: ")
+let myCar2 = new Car ("Honda", "Civic", 2009);
+output(`My Car is a ${myCar2.make} ${myCar2.model}`);
+myCar2.Start();
+myCar2.Stop();
+myCar2.Stop();
+myCar2.Drive(100);
+output("end");
+//myCar to JSON */
+let myCarJSON = JSON.stringify(myCar);
+output(myCarJSON);
+//Checks
+//output(`Car - Make: ${myCar.make}, Model: ${myCar.model}, Year: ${myCar.year} Odometer reads at: ${myCar.odometer}`);
+//output(`Engine - Cylinder Count: ${myCar.myEngine.cylCount}, Is it running? ${myCar.myEngine.isRunning}`); //Engine Class properties need to initialize from Car Class
+//output(`Transmission - Is it automatic? ${myCar.myTransmission.transTypeAuto}, Gear Count: ${myCar.myTransmission.gearCount}`);
 }
