@@ -9,3 +9,13 @@ Use `output()` and `await input()` from `./src/js/scripts.js` to allow the user 
 To run the console, launch `./src/index.html`.
 
 Add your README content here.
+# Shallowly Simulated Car & Engine
+## Contributions
+Program created by Shylo Edinger, instructed by Bo Cen
+## Project Purpose
+This program loosely simulates a car and its engine.
+The car instantiates, and defaults as off. The car is turned on, and drives.
+Catches for exceptions are provided, such as:
+-Starting a car that is already on.
+-Shutting off a car that is already off.
+-Attempting to drive a car that is off.
