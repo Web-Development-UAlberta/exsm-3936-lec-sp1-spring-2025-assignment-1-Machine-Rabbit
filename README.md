@@ -13,9 +13,8 @@ Add your README content here.
 ## Contributions
 Program created by Shylo Edinger, instructed by Bo Cen
 ## Project Features
-This program demostrates Classes. It has a Car, Engine, and Transmission Classes.
-The engine and transmission class is instantiated by the car class.
-This program contains methods that Start the car, Stop the car, and Drive the Car.
+This program demostrates Javascript Classes and Methods. It has Car, Engine, and Transmission Classes, and Start, Stop and Drive Methods.
+The engine and transmission classes are instantiated by the Car class.
 The car after Starting, stopping and driving will then output the total distance travelled.
 ## Project Purpose
 This program loosely simulates a car and its engine.
