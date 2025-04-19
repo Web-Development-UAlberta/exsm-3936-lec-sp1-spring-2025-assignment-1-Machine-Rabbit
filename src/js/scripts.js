@@ -3,17 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 async function main() {
 //write classes car and engine with their own constructors
-//properties: Odometer (always initializes at 0), engine (always initilizes as false (boolean off/on false/true))
-//car class should include: Make, Model, Year, Odometer and Engine
 //Engine property will be an instance of the engine class
-//method to start the car engine (no parameters)
-//stop the car engine(set the car to not running) (no parameters)
-//drive the car (a single parameter representing the distance to drive) which will add the argument to the odometer if the engine is on and throw and exception otherwise.
-//THe properties of the engine class should include a number of cylinders and whether it is running or not
-//Properties: Make Model Year
-//Methods: startEngine/stopEngine, Drive
-//...
-//...
 //...
 class Car {
   constructor(make, model, year){
@@ -49,25 +39,20 @@ class Car {
   //setters
   set make (value){
     if (!value || typeof value !== "string"){
-      //output('test: at make if');
     }
     else{
       this._make = value;
-      //output('test: at set make else');
     }
   }
   set model(value){
     if (!value || typeof value !== "string"){
-      //output("test: at set model if");
     }
     else{
       this._model = value;
-      //output("test: at set model else");
     }
   }
   set year (value){
     this._year = parseInt(value);
-    //output("test: at set year");
   }
   set odometer(value){
     this._odometer = value;
@@ -80,6 +65,8 @@ class Car {
   }
   //Methods
   //Method to start the car (No parameters)
+  //Method to Stop the car engine (no parameters)
+  //Method to Drive the car
     Start(){
       if (!this.myEngine.isRunning){
         this.myEngine.isRunning = true;
@@ -105,8 +92,7 @@ class Car {
         output("You can't drive with the car turned off!");
       }
     }
-  //Method to Stop the car engine (no parameters)
-  //Method to Drive the car
+
 }
 class Engine {
   constructor(cylCount, isRunning){
@@ -135,6 +121,7 @@ class Transmission {
     this.transTypeAuto = transTypeAuto;
     this.gearCount = gearCount;
   }
+  //...
   //Getters
   get transTypeAuto(){
     return this._transTypeAuto;
@@ -142,6 +129,7 @@ class Transmission {
   get gearCount(){
     return this._gearCount;
   }
+  //...
   //Setters
   set transTypeAuto(value){
     this._transTypeAuto = value;
@@ -177,9 +165,11 @@ myCar2.Stop();
 myCar2.Stop();
 myCar2.Drive(100);
 output("end");
+//...
 //myCar to JSON */
 let myCarJSON = JSON.stringify(myCar);
 output(myCarJSON);
+//...
 //Checks
 //output(`Car - Make: ${myCar.make}, Model: ${myCar.model}, Year: ${myCar.year} Odometer reads at: ${myCar.odometer}`);
 //output(`Engine - Cylinder Count: ${myCar.myEngine.cylCount}, Is it running? ${myCar.myEngine.isRunning}`); //Engine Class properties need to initialize from Car Class
